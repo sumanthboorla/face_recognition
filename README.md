@@ -1,6 +1,6 @@
 # face_recognition
-# 1.	INTRODUCTION
-                      #       1.1. Introduction
+# 1.INTRODUCTION
+                      				 1.1. Introduction
 Attendance is mandatory for any institution or organisation based on the attendance the organisation or institution give upraise for employees or for students in colleges it is mandatory of their presence to give promote with minimal attendance for the next academic year.
 There are traditional ways of taking the attendance like
 1.	Teacher/Supervisor physical takes the presence of students/employee and mark present or absent.
@@ -16,7 +16,7 @@ Face recognition , pandas , Opencv ,PIL, pygames ,datetime, sys ,os.
 Developing of the face recognition can be done in many ways like training the machine of various images and using the deep learning concept we can do.
 Here we have done in face recognition library which pretrained module here no need give have any trained images, but it is easy to implement but it takes time to detect the image bit slow in normal CPU. It is fast in the GPU.
 
-                             # 1.3. Objectives
+                             			 1.3. Objectives
 
 To overcome the above problems
 1.	Teacher/Supervisor may miss the attendance due to miscommunication
@@ -26,7 +26,7 @@ To overcome the above problems
 Due to these reasons we updated to face recognition attendance.
 
 
-                            # 1.4. Literature Survey
+                            			 1.4. Literature Survey
  There are the other methods where like deep learning concepts where we need to train the dataset which requires the much amount space. There are the other methods using open-cv and tensor-flow , harrcasecade but they required the dataset and we need to train the data set.
                   Table 1.1 Different methods for face detection 
 Methods	Acurracy	Dataset training	Fasteness
@@ -39,7 +39,7 @@ TensorFlow	98.4	Yes	5 sec
 
 
 
-                              # 2. IMPLEMENTATION
+                              			 2. IMPLEMENTATION
 
 
 2.1 Methodology
@@ -55,7 +55,8 @@ Design
 
 
 
-Flow Chart
+# Flow Chart
+
 ![Screenshot (216)](https://user-images.githubusercontent.com/73389805/178927022-75e55c2e-dd99-4896-a3e9-c55a71553ec9.png)
               Fig 2.1. Working model of attendance management
 
@@ -77,6 +78,7 @@ Sl No	Library / Module Name	Usage
               
 
 1. Reference Data Load Module
+
 Here top10rich.csv file created and columns we have
 Employee Identification Number 
 Employee's First Name
@@ -91,6 +93,7 @@ Code
                     Fig 2.2 Loading the data from excel and encoding
 
 2. Face Capture Module 
+
 When the employee stands in front of the camera, the image of his or her face is captured. We'd want to collect the image frames continuously for 5 frames and then choose the middle one (3rd frame) because the image capture happens in real time.
 They saved as employee [i], for i=1,2 …..9 .png
 Load employee3.png as grp_photo
@@ -102,6 +105,7 @@ Code
  
                            Fig 2.3 Capturing the photos
 3. Face Recognition Module 
+
 Face encodings of all the images emp_code [] and camera captured image encodings we are compare it and if the comparing where match we get the desired output. 
 Whole thing we placed in the try and catch block.
 The compare will return the Boolean value that is True or False and found value is True the found value will be True 
@@ -112,6 +116,7 @@ Code
 		           Fig 2.4. Comparing the photos with registered images
 
 4.Attendance Record (in a Data file) Module:
+
 If the index is equal to -1, it means we have not recognized the face. So, in this case attendance is not recorded in the data file. If it is not -1 the string with employee no and employee name and date and time will be printed in the data text file.
 Code
 ![Web capture_1-1-2022_191630_localhost](https://user-images.githubusercontent.com/73389805/178927044-e5a1f390-9e61-47a9-b35d-4f67034d016c.jpeg)
@@ -127,8 +132,11 @@ Code
 
  
                         Fig 2.6 Drawing bounding boxes
+			
 6: Announcing (Audio) the Attendance
+
 Using the pygame library we can play the audio . Firstly , the audio of failure face recognition and success recorded and it is played using the pygame .If emp_index value is -1 load and play the failure audio from the location. If emp_index is not -1 that means it some value and it load and play the success audio.
+
 Code
 
 ![Web capture_1-1-2022_191529_localhost](https://user-images.githubusercontent.com/73389805/178927042-0f9f0bdf-be22-45d9-b02c-b45e960aa6b6.jpeg)
@@ -137,9 +145,10 @@ Code
 
 
 Result and Analysis:
+
  ![Screenshot (234)](https://user-images.githubusercontent.com/73389805/178927033-26c9e399-01dd-43c6-bb16-fd7cdc167d79.png)
  
-                           Fig 2.8 The student attendance recorded 
+                           		Fig 2.8 The student attendance recorded 
 
 It is gives the accurate result. It compare the csv file and captured image if the image is in that it display the name an image. If it is not in the csv file it show the face has not recognized.
 
@@ -150,9 +159,7 @@ It is gives the accurate result. It compare the csv file and captured image if t
                    Fig 2.9 Showing location of image matches with registered data
 
 The text file attendance will store the data that is camera captured of the employee with data and time.
-
-
-                                # CONCLUSIONS
+# CONCLUSIONS
  Conclusion
 By this project we have developed the Automatic attendance using face recognition and learned the different python libraries which are used to develop this project mainly we learnt
 PIL image Drawing on the image and bounding box on the image from the face recognition library. Using face location ,face encoding ,face compare method and their parameter used.
